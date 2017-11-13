@@ -1,6 +1,10 @@
 CREATE DATABASE users;
 USE users;
 
+CREATE USER 'epam_student'@'localhost' IDENTIFIED BY 'stud';
+GRANT ALL ON users.* TO 'epam_student'@'localhost';
+FLUSH PRIVILEGES;
+
 CREATE TABLE users(
 	name VARCHAR(10) NOT NULL,
 	surname VARCHAR(20) NOT NULL,
